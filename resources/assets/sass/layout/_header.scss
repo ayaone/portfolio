@@ -1,5 +1,5 @@
 body {
-    background-color: $body-bg; // change later to body-bg
+    background-color: $body-bg;
 }
 
 .header {
@@ -7,9 +7,7 @@ body {
     padding-left: 6.5rem;
     padding-right: 6.5rem;
 
-//    font-size: 1.8rem;
-
-    background-color: $body-bg; //for testing only
+    background-color: $body-bg;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -19,11 +17,14 @@ body {
         text-decoration: none;
         list-style-type: none;
 
+        &:hover {
+            cursor: pointer;
+        }
+
         &--item {
             position: relative;
-            padding: 1rem 1.75rem;
-            padding-top: .5rem;
-            padding-bottom: .5rem;
+            padding: 1.5rem 1.75rem;
+
             a:link,
             a:visited,
             a:active {

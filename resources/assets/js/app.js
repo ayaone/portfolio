@@ -16,7 +16,20 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+import Home from './components/Home.vue';
+import Portfolio from './components/Portfolio.vue';
+import Contact from './components/Contact.vue';
+import About from './components/About.vue'; 
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    components: {
+        Home, Portfolio, Contact, About
+    },
+    data: {
+        currentView: 'home',
+        css: {
+            active: 'header__menu--item-active'
+        }
+    }
 });
