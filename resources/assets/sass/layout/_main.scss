@@ -1,0 +1,55 @@
+.main {
+    margin: 0 6.5rem 6.5rem 6.5rem;
+    background-color: $bg-white;
+    height: calc(100vh - 13rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+
+    &__title {
+        &-1 {
+            color: #888;
+            font-size: 4.8rem;
+            font-weight: 400;
+            letter-spacing: 1.9px;
+            margin-bottom: 4.5rem;
+        }
+        &-2 {
+            font-size: 4.8rem;
+            font-weight: 400;
+            letter-spacing: 1.9px;
+            margin-bottom: 8rem;
+            color: #333;
+        }
+    }
+    &__button {
+        text-decoration: none;
+        border-radius: 5px;
+        border: solid 3px #333;
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #333;
+        padding: 2rem 6rem;
+    }
+    &__button:hover {
+        cursor: pointer;
+        background-color: #333;
+        color: #fff;
+    }
+
+}
+
+.arrow {
+    align-self: flex-end;
+    position: absolute;
+    color: blue;
+}
+

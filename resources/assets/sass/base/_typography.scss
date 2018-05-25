@@ -3,8 +3,15 @@ body {
     font-weight: 400;
 }
 
-.header__text {
-    font-size: 1.8rem;
-    font-weight: 400;
+.header {
     color: $color-primary-black;
+    &__text {
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+
+    &__menu--item {
+        font-size: 1.4rem;
+        letter-spacing: 1.4px;
+    }
 }
