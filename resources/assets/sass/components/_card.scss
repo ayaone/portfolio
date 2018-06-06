@@ -1,0 +1,107 @@
+.card {
+    margin-right: 5rem; //only temp
+    position: relative;
+    height: 50rem;
+    width: 33.333rem;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px 0 rgba(0,0,0, .8);
+    &__lms {
+        height: 100%;
+        background-image: linear-gradient(to right, rgba(112,231,140,.3), rgba(112,231,140,.3)), url('/img/lms-large.jpg');
+        background-size: cover;
+    }
+
+
+    &__blur {
+        transition: all .3s;
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 15;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(to right rgba(0, 0, 0,.4), rgba(0,0,0,.4)), linear-gradient(to right, rgba(112,231,140,.5), rgba(112,231,140,.5)), url('/img/lms-large.jpg');
+        background-size: cover;
+        filter: blur(3px);
+    }
+
+
+    &__onhover {
+        transition: all .3s;
+        opacity: 0;
+        position: relative;
+        z-index: 30;
+        color: #fff;
+        &--title {
+            margin-top: 4rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-size: 1.6rem;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            line-height: 1.75;
+        }
+        &--tooling {
+            font-size: 1.6rem;
+            text-align: center;
+            letter-spacing: 1.2px;
+            margin-top: 2.5rem;
+        }
+        &--tools{
+            font-size: 1.4rem;
+            letter-spacing: 1.1px;
+            text-align: center;
+            margin-top: 1rem;;
+        }
+    }
+    .card__tech {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        letter-spacing: 1.2;
+        font-size: 1.6rem;
+        line-height: 2.8rem;
+        &-front {
+            text-align: center;
+            flex-grow: 1;
+            &--title {
+                font-weight: 700;
+            }
+        }
+        &-back {
+            flex-grow: 1;
+            text-align: center;
+            list-style: none;
+            &--title {
+                font-weight: 700;
+            }
+        }
+    }
+
+    &:hover &__blur, &:hover &__onhover{
+        opacity: 1;
+    }
+
+    &__title {
+        position: relative;
+        z-index: 15;
+        height: 15rem;
+        padding: 2.5rem 5.5rem;
+
+        color: $color-primary-white;
+        font-size: 1.6rem;
+        letter-spacing: 1.2px;
+        line-height: 1.75;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    &__title--lms {
+        background-color: #00ce78;
+    }
+    &__subtitle {
+        text-transform: none;
+        font-weight: 700;
+    }
+}

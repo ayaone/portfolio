@@ -27,7 +27,7 @@ const app = new Vue({
         Home, Portfolio, Contact, About
     },
     data: {
-        currentView: 'home',
+        currentView: 'portfolio',
         css: {
             active: 'header__menu--item-active'
         }

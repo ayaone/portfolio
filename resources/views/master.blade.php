@@ -8,6 +8,6 @@
         <title>Arek Bochenski</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400, 700" rel="stylesheet">
 
     </head>

@@ -5,4 +5,11 @@
    CLOSED: [2018-06-06 Wed 07:04]
 ** DONE extract the header to blade component
    CLOSED: [2018-06-06 Wed 07:04]
-** TODO put the site on github
+** DONE put the site on github
+   CLOSED: [2018-06-06 Wed 07:07]
+** STARTED create portfolio card
+*** TODO finish card__tech
+*** STARTED add slots for the hover state
+* touch-up 
+** optimize images (in PS maybe)
+** add different versions of images depending on the screen
