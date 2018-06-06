@@ -1,0 +1,8 @@
+* next
+** DONE extract the head to master blade comp
+   CLOSED: [2018-06-06 Wed 06:37]
+** DONE add a nice transition when changing views
+   CLOSED: [2018-06-06 Wed 07:04]
+** DONE extract the header to blade component
+   CLOSED: [2018-06-06 Wed 07:04]
+** TODO put the site on github

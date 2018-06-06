@@ -1,7 +1,8 @@
 <template>
-    <div class="main">
-        Portfolio
-    </div>
+  <div class="main-wrap">
+    Portfolio   
+  </div>
+
 </template>
 
 <script>
