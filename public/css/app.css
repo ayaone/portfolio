@@ -233,6 +233,7 @@ body {
 
 .card {
   margin-right: 5rem;
+  margin-bottom: 1rem;
   position: relative;
   height: 50rem;
   width: 33.333rem;
@@ -249,6 +250,20 @@ body {
   background-size: cover;
 }
 
+.card__exam {
+  height: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(188, 122, 176, 0.3)), to(rgba(188, 122, 176, 0.3))), url("/img/exam-large.jpg");
+  background-image: linear-gradient(to right, rgba(188, 122, 176, 0.3), rgba(188, 122, 176, 0.3)), url("/img/exam-large.jpg");
+  background-size: cover;
+}
+
+.card__chat {
+  height: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(177, 193, 122, 0.3)), to(rgba(177, 193, 122, 0.3))), url("/img/chat-large.jpg");
+  background-image: linear-gradient(to right, rgba(177, 193, 122, 0.3), rgba(177, 193, 122, 0.3)), url("/img/chat-large.jpg");
+  background-size: cover;
+}
+
 .card__blur {
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -259,8 +274,30 @@ body {
   z-index: 15;
   height: 100%;
   width: 100%;
+}
+
+.card__blur--lms {
+  height: 100%;
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.4))), -webkit-gradient(linear, left top, right top, from(rgba(112, 231, 140, 0.5)), to(rgba(112, 231, 140, 0.5))), url("/img/lms-large.jpg");
   background-image: linear-gradient(to right rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), linear-gradient(to right, rgba(112, 231, 140, 0.5), rgba(112, 231, 140, 0.5)), url("/img/lms-large.jpg");
+  background-size: cover;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
+.card__blur--exam {
+  height: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.4))), -webkit-gradient(linear, left top, right top, from(rgba(188, 122, 176, 0.5)), to(rgba(188, 122, 176, 0.5))), url("/img/exam-large.jpg");
+  background-image: linear-gradient(to right rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), linear-gradient(to right, rgba(188, 122, 176, 0.5), rgba(188, 122, 176, 0.5)), url("/img/exam-large.jpg");
+  background-size: cover;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
+.card__blur--chat {
+  height: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.4))), -webkit-gradient(linear, left top, right top, from(rgba(177, 193, 122, 0.5)), to(rgba(177, 193, 122, 0.5))), url("/img/chat-large.jpg");
+  background-image: linear-gradient(to right rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), linear-gradient(to right, rgba(177, 193, 122, 0.5), rgba(177, 193, 122, 0.5)), url("/img/chat-large.jpg");
   background-size: cover;
   -webkit-filter: blur(3px);
           filter: blur(3px);
@@ -354,7 +391,15 @@ body {
 }
 
 .card__title--lms {
-  background-color: #00ce78;
+  background-color: #30d38f;
+}
+
+.card__title--exam {
+  background-color: #bc7ab0;
+}
+
+.card__title--chat {
+  background-color: #B1C17A;
 }
 
 .card__subtitle {

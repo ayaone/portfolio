@@ -7,9 +7,19 @@
    CLOSED: [2018-06-06 Wed 07:04]
 ** DONE put the site on github
    CLOSED: [2018-06-06 Wed 07:07]
-** STARTED create portfolio card
-*** TODO finish card__tech
-*** STARTED add slots for the hover state
+** DONE create portfolio card
+   CLOSED: [2018-06-06 Wed 19:05]
+*** DONE finish card__tech
+    CLOSED: [2018-06-06 Wed 19:05]
+**** DONE add slots for the hover state
+     CLOSED: [2018-06-06 Wed 19:04]
+** DONE add all remaining cards
+   CLOSED: [2018-06-07 Thu 10:49]
+** DONE give more breathing room to the cards, the bottom is cut off
+   CLOSED: [2018-06-07 Thu 10:22]
+** TODO design remaining cards in photoshop
+** STARTED open udemy's projects, take screenshots and share with windows partition
 * touch-up 
 ** optimize images (in PS maybe)
 ** add different versions of images depending on the screen
+** mobile

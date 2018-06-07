@@ -16,6 +16,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('carousel', require('./components/Carousel.vue'));
 import Home from './components/Home.vue';
 import Portfolio from './components/Portfolio.vue';
 import Contact from './components/Contact.vue';
@@ -27,7 +28,7 @@ const app = new Vue({
         Home, Portfolio, Contact, About
     },
     data: {
-        currentView: 'portfolio',
+        currentView: 'home',
         css: {
             active: 'header__menu--item-active'
         }

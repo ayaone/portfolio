@@ -1,5 +1,6 @@
 .card {
     margin-right: 5rem; //only temp
+    margin-bottom: 1rem;
     position: relative;
     height: 50rem;
     width: 33.333rem;
@@ -9,6 +10,16 @@
     &__lms {
         height: 100%;
         background-image: linear-gradient(to right, rgba(112,231,140,.3), rgba(112,231,140,.3)), url('/img/lms-large.jpg');
+        background-size: cover;
+    }
+    &__exam {
+        height: 100%;
+        background-image: linear-gradient(to right, rgba($exam-main,.3), rgba($exam-main,.3)), url('/img/exam-large.jpg');
+        background-size: cover;
+    }
+    &__chat {
+        height: 100%;
+        background-image: linear-gradient(to right, rgba($chat-main,.3), rgba($chat-main,.3)), url('/img/chat-large.jpg');
         background-size: cover;
     }
 
@@ -22,9 +33,24 @@
         z-index: 15;
         height: 100%;
         width: 100%;
-        background-image: linear-gradient(to right rgba(0, 0, 0,.4), rgba(0,0,0,.4)), linear-gradient(to right, rgba(112,231,140,.5), rgba(112,231,140,.5)), url('/img/lms-large.jpg');
-        background-size: cover;
-        filter: blur(3px);
+        &--lms{
+            height: 100%;
+            background-image: linear-gradient(to right rgba(0, 0, 0,.4), rgba(0,0,0,.4)), linear-gradient(to right, rgba(112,231,140,.5), rgba(112,231,140,.5)), url('/img/lms-large.jpg');
+            background-size: cover;
+            filter: blur(3px);
+        }
+        &--exam{
+            height: 100%;
+            background-image: linear-gradient(to right rgba(0, 0, 0,.4), rgba(0,0,0,.4)), linear-gradient(to right, rgba($exam-main,.5), rgba($exam-main,.5)), url('/img/exam-large.jpg');
+            background-size: cover;
+            filter: blur(3px);
+        }
+        &--chat{
+            height: 100%;
+            background-image: linear-gradient(to right rgba(0, 0, 0,.4), rgba(0,0,0,.4)), linear-gradient(to right, rgba($chat-main,.5), rgba($chat-main,.5)), url('/img/chat-large.jpg');
+            background-size: cover;
+            filter: blur(3px);
+        }
     }
 
 
@@ -98,7 +124,13 @@
         text-transform: uppercase;
     }
     &__title--lms {
-        background-color: #00ce78;
+        background-color: $lms-main;
+    }
+    &__title--exam {
+        background-color: $exam-main;
+    }
+    &__title--chat {
+        background-color: $chat-main;
     }
     &__subtitle {
         text-transform: none;

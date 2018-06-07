@@ -2,6 +2,8 @@
 <div class="card">
   <div :class="card">
     <div class="card__blur">
+      <div :class="cardBlur">
+      </div>
     </div>
     <div class="card__title" :class="cardTitle">
       <slot name="title"></slot>
@@ -47,7 +49,15 @@ export default {
         },
         cardTitle(){
             return `card__title--${this.name}`;
+        },
+        cardBlur(){
+            return `card__blur--${this.name}`;
         }
-    }
+    },
+    mounted(){
+        this.$nextTick(function(){
+            console.log('card');
+         });
+     }
 }
 </script>
