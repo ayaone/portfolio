@@ -285,6 +285,10 @@ body {
   background-size: cover;
 }
 
+.card:hover {
+  cursor: pointer;
+}
+
 .card__blur {
   -webkit-transition: all .3s;
   transition: all .3s;

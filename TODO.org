@@ -17,8 +17,12 @@
    CLOSED: [2018-06-07 Thu 10:49]
 ** DONE give more breathing room to the cards, the bottom is cut off
    CLOSED: [2018-06-07 Thu 10:22]
-** TODO design remaining cards in photoshop
-** STARTED open udemy's projects, take screenshots and share with windows partition
+** DONE design remaining cards in photoshop
+   CLOSED: [2018-06-08 Fri 08:52]
+** DONE open udemy's projects, take screenshots and share with windows partition
+   CLOSED: [2018-06-08 Fri 08:53]
+** STARTED check full screen vs vue view
+** TODO fix photoshop / freaking windows 10 update
 * touch-up 
 ** optimize images (in PS maybe)
 ** add different versions of images depending on the screen
