@@ -70,6 +70,65 @@
       </template>
     </card>
     
+
+    <card name="tours">
+      <template slot="title">
+        Homepage
+      </template>
+      <p slot="subtitle">
+        a tourist agency
+      </p>
+      <template slot="front">
+        <li>CSS3</li>
+        <li>SASS</li>
+      </template>
+      <template slot="back">
+        <li>none</li>
+      </template>
+      <template slot="tools">
+        GIT, NodeJS
+      </template>
+    </card>
+
+
+    <card name="resort">
+      <template slot="title">
+        Frontpage
+      </template>
+      <p slot="subtitle">
+        a resort
+      </p>
+      <template slot="front">
+        <li>CSS3</li>
+        <li>SASS</li>
+      </template>
+      <template slot="back">
+        <li>none</li>
+      </template>
+      <template slot="tools">
+        GIT, NodeJS
+      </template>
+    </card>
+
+
+    <card name="estate">
+      <template slot="title">
+        Frontpage
+      </template>
+      <p slot="subtitle">
+        a resort
+      </p>
+      <template slot="front">
+        <li>CSS3</li>
+        <li>SASS</li>
+      </template>
+      <template slot="back">
+        <li>none</li>
+      </template>
+      <template slot="tools">
+        GIT, NodeJS
+      </template>
+    </card>
   </carousel>
 </div>
 

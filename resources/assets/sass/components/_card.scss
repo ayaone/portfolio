@@ -22,6 +22,21 @@
         background-image: linear-gradient(to right, rgba($chat-main,.3), rgba($chat-main,.3)), url('/img/chat-large.jpg');
         background-size: cover;
     }
+    &__tours {
+        height: 100%;
+        background-image: linear-gradient(to right, rgba($tours-main,.3), rgba($tours-main,.3)), url('/img/tours-large.jpg');
+        background-size: cover;
+    }
+    &__resort {
+        height: 100%;
+        background-image: linear-gradient(to right, rgba($resort-main,.3), rgba($resort-main,.3)), url('/img/resort-large.jpg');
+        background-size: cover;
+    }
+    &__estate {
+        height: 100%;
+        background-image: linear-gradient(to right, rgba($estate-main,.3), rgba($estate-main,.3)), url('/img/estate-large.jpg');
+        background-size: cover;
+    }
 
 
     &__blur {
@@ -48,6 +63,24 @@
         &--chat{
             height: 100%;
             background-image: linear-gradient(to right rgba(0, 0, 0,.4), rgba(0,0,0,.4)), linear-gradient(to right, rgba($chat-main,.5), rgba($chat-main,.5)), url('/img/chat-large.jpg');
+            background-size: cover;
+            filter: blur(3px);
+        }
+        &--tours{
+            height: 100%;
+            background-image: linear-gradient(to right rgba(0, 0, 0,.4), rgba(0,0,0,.4)), linear-gradient(to right, rgba($tours-main,.5), rgba($tours-main,.5)), url('/img/tours-large.jpg');
+            background-size: cover;
+            filter: blur(3px);
+        }
+        &--resort{
+            height: 100%;
+            background-image: linear-gradient(to right rgba(0, 0, 0,.4), rgba(0,0,0,.4)), linear-gradient(to right, rgba($resort-main,.5), rgba($resort-main,.5)), url('/img/resort-large.jpg');
+            background-size: cover;
+            filter: blur(3px);
+        }
+        &--estate{
+            height: 100%;
+            background-image: linear-gradient(to right rgba(0, 0, 0,.4), rgba(0,0,0,.4)), linear-gradient(to right, rgba($estate-main,.5), rgba($estate-main,.5)), url('/img/estate-large.jpg');
             background-size: cover;
             filter: blur(3px);
         }
@@ -131,6 +164,15 @@
     }
     &__title--chat {
         background-color: $chat-main;
+    }
+    &__title--tours {
+        background-color: $tours-main;
+    }
+    &__title--resort {
+        background-color: $resort-main;
+    }
+    &__title--estate {
+        background-color: $estate-main;
     }
     &__subtitle {
         text-transform: none;
