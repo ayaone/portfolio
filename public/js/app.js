@@ -375,6 +375,115 @@ module.exports = {
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports) {
+
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file.
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier /* server only */
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = injectStyles
+  }
+
+  if (hook) {
+    var functional = options.functional
+    var existing = functional
+      ? options.render
+      : options.beforeCreate
+
+    if (!functional) {
+      // inject component registration as beforeCreate hook
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    } else {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return existing(h, context)
+      }
+    }
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -622,115 +731,6 @@ return utils;
 
 
 /***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file.
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-module.exports = function normalizeComponent (
-  rawScriptExports,
-  compiledTemplate,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier /* server only */
-) {
-  var esModule
-  var scriptExports = rawScriptExports = rawScriptExports || {}
-
-  // ES6 modules interop
-  var type = typeof rawScriptExports.default
-  if (type === 'object' || type === 'function') {
-    esModule = rawScriptExports
-    scriptExports = rawScriptExports.default
-  }
-
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (compiledTemplate) {
-    options.render = compiledTemplate.render
-    options.staticRenderFns = compiledTemplate.staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = injectStyles
-  }
-
-  if (hook) {
-    var functional = options.functional
-    var existing = functional
-      ? options.render
-      : options.beforeCreate
-
-    if (!functional) {
-      // inject component registration as beforeCreate hook
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    } else {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functioal component in vue file
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return existing(h, context)
-      }
-    }
-  }
-
-  return {
-    esModule: esModule,
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -743,7 +743,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// Flickity main
     !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
       __webpack_require__(6),
       __webpack_require__(14),
-      __webpack_require__(1),
+      __webpack_require__(2),
       __webpack_require__(55),
       __webpack_require__(56),
       __webpack_require__(57)
@@ -3082,7 +3082,7 @@ return TapListener;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(18);
-module.exports = __webpack_require__(85);
+module.exports = __webpack_require__(88);
 
 
 /***/ }),
@@ -3099,6 +3099,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Contact_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_Contact_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_About_vue__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_About_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_About_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Lms_vue__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Lms_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_Lms_vue__);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -3123,10 +3125,11 @@ Vue.component('carousel', __webpack_require__(47));
 
 
 
+
 var app = new Vue({
     el: '#app',
     components: {
-        Home: __WEBPACK_IMPORTED_MODULE_0__components_Home_vue___default.a, Portfolio: __WEBPACK_IMPORTED_MODULE_1__components_Portfolio_vue___default.a, Contact: __WEBPACK_IMPORTED_MODULE_2__components_Contact_vue___default.a, About: __WEBPACK_IMPORTED_MODULE_3__components_About_vue___default.a
+        Home: __WEBPACK_IMPORTED_MODULE_0__components_Home_vue___default.a, Portfolio: __WEBPACK_IMPORTED_MODULE_1__components_Portfolio_vue___default.a, Contact: __WEBPACK_IMPORTED_MODULE_2__components_Contact_vue___default.a, About: __WEBPACK_IMPORTED_MODULE_3__components_About_vue___default.a, Lms: __WEBPACK_IMPORTED_MODULE_4__components_Lms_vue___default.a
     },
     data: {
         currentView: 'home',
@@ -32447,7 +32450,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(45)
 /* template */
@@ -32570,7 +32573,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(48)
 }
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(52)
 /* template */
@@ -33267,7 +33270,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// animate
   if ( true ) {
     // AMD
     !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
-      __webpack_require__(1)
+      __webpack_require__(2)
     ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( utils ) {
       return factory( window, utils );
     }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
@@ -33470,7 +33473,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// drag
     !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
       __webpack_require__(3),
       __webpack_require__(59),
-      __webpack_require__(1)
+      __webpack_require__(2)
     ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( Flickity, Unidragger, utils ) {
       return factory( window, Flickity, Unidragger, utils );
     }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
@@ -34160,7 +34163,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// prev/next but
     !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
       __webpack_require__(3),
       __webpack_require__(16),
-      __webpack_require__(1)
+      __webpack_require__(2)
     ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( Flickity, TapListener, utils ) {
       return factory( window, Flickity, TapListener, utils );
     }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
@@ -34388,7 +34391,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// page dots
     !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
       __webpack_require__(3),
       __webpack_require__(16),
-      __webpack_require__(1)
+      __webpack_require__(2)
     ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( Flickity, TapListener, utils ) {
       return factory( window, Flickity, TapListener, utils );
     }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
@@ -34578,7 +34581,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// player & auto
     // AMD
     !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
       __webpack_require__(6),
-      __webpack_require__(1),
+      __webpack_require__(2),
       __webpack_require__(3)
     ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( EvEmitter, utils, Flickity ) {
       return factory( EvEmitter, utils, Flickity );
@@ -34776,7 +34779,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// add, remove c
     // AMD
     !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
       __webpack_require__(3),
-      __webpack_require__(1)
+      __webpack_require__(2)
     ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( Flickity, utils ) {
       return factory( window, Flickity, utils );
     }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
@@ -34944,7 +34947,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// lazyload
     // AMD
     !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
       __webpack_require__(3),
-      __webpack_require__(1)
+      __webpack_require__(2)
     ], __WEBPACK_AMD_DEFINE_RESULT__ = (function( Flickity, utils ) {
       return factory( window, Flickity, utils );
     }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
@@ -35597,7 +35600,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(71)
 /* template */
@@ -35727,7 +35730,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(74)
 /* template */
@@ -35926,7 +35929,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(76)
 /* template */
@@ -36019,6 +36022,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['name'],
+    methods: {
+        view: function view() {
+            this.$root.$data.currentView = this.name;
+        }
+    },
     computed: {
         card: function card() {
             return 'card__' + this.name;
@@ -36029,11 +36037,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         cardBlur: function cardBlur() {
             return 'card__blur--' + this.name;
         }
-    },
-    mounted: function mounted() {
-        this.$nextTick(function () {
-            console.log('card');
-        });
     }
 });
 
@@ -36045,7 +36048,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "card" }, [
+  return _c("div", { staticClass: "card", on: { click: _vm.view } }, [
     _c("div", { class: _vm.card }, [
       _c("div", { staticClass: "card__blur" }, [
         _c("div", { class: _vm.cardBlur })
@@ -36351,7 +36354,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(80)
 /* template */
@@ -36433,7 +36436,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(2)
+var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(83)
 /* template */
@@ -36512,6 +36515,92 @@ if (false) {
 
 /***/ }),
 /* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(86)
+/* template */
+var __vue_template__ = __webpack_require__(87)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Lms.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-004eceab", Component.options)
+  } else {
+    hotAPI.reload("data-v-004eceab", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 86 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {}
+});
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "main-wrap" }, [
+    _vm._v("\n  Learning Management System\n")
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-004eceab", module.exports)
+  }
+}
+
+/***/ }),
+/* 88 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

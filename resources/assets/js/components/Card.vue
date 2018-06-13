@@ -1,5 +1,5 @@
 <template>
-<div class="card">
+<div class="card" @click="view">
   <div :class="card">
     <div class="card__blur">
       <div :class="cardBlur">
@@ -43,6 +43,11 @@
 <script>
 export default {
     props: ['name'],
+    methods: {
+        view(){
+            this.$root.$data.currentView=this.name;
+        } 
+    },
     computed: {
         card (){
             return `card__${this.name}`;
@@ -53,11 +58,6 @@ export default {
         cardBlur(){
             return `card__blur--${this.name}`;
         }
-    },
-    mounted(){
-        this.$nextTick(function(){
-            console.log('card');
-         });
-     }
+    }
 }
 </script>

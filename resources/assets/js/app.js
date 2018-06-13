@@ -21,11 +21,12 @@ import Home from './components/Home.vue';
 import Portfolio from './components/Portfolio.vue';
 import Contact from './components/Contact.vue';
 import About from './components/About.vue';
+import Lms from './components/Lms.vue';
 
 const app = new Vue({
     el: '#app',
     components: {
-        Home, Portfolio, Contact, About
+        Home, Portfolio, Contact, About, Lms
     },
     data: {
         currentView: 'home',

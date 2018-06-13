@@ -1,28 +1,9 @@
 * next
-** DONE extract the head to master blade comp
-   CLOSED: [2018-06-06 Wed 06:37]
-** DONE add a nice transition when changing views
-   CLOSED: [2018-06-06 Wed 07:04]
-** DONE extract the header to blade component
-   CLOSED: [2018-06-06 Wed 07:04]
-** DONE put the site on github
-   CLOSED: [2018-06-06 Wed 07:07]
-** DONE create portfolio card
-   CLOSED: [2018-06-06 Wed 19:05]
-*** DONE finish card__tech
-    CLOSED: [2018-06-06 Wed 19:05]
-**** DONE add slots for the hover state
-     CLOSED: [2018-06-06 Wed 19:04]
-** DONE add all remaining cards
-   CLOSED: [2018-06-07 Thu 10:49]
-** DONE give more breathing room to the cards, the bottom is cut off
-   CLOSED: [2018-06-07 Thu 10:22]
-** DONE design remaining cards in photoshop
-   CLOSED: [2018-06-08 Fri 08:52]
-** DONE open udemy's projects, take screenshots and share with windows partition
-   CLOSED: [2018-06-08 Fri 08:53]
-** STARTED check full screen vs vue view
-** TODO fix photoshop / freaking windows 10 update
+** DONE check full screen vs vue view
+   CLOSED: [2018-06-13 Wed 08:14]
+** DONE fix photoshop / freaking windows 10 update
+   CLOSED: [2018-06-13 Wed 08:14]
+** TODO add global tab state so that portfolio can be highlighted when inside of the portfolio view :)
 * touch-up 
 ** optimize images (in PS maybe)
 ** add different versions of images depending on the screen
