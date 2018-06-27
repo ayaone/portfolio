@@ -56,6 +56,7 @@ export default {
                     // display a sent confirmation message  
                 })
                 .catch(errors => {
+                    console.log(errors);
                     console.log(errors.response.data.errors);
                 });
         }

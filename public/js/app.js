@@ -36698,6 +36698,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.post('/contact', this.message).then(function () {
                 // display a sent confirmation message  
             }).catch(function (errors) {
+                console.log(errors);
                 console.log(errors.response.data.errors);
             });
         }
