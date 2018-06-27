@@ -96,7 +96,7 @@
         Frontpage
       </template>
       <p slot="subtitle">
-        a resort
+        travel agency
       </p>
       <template slot="front">
         <li>CSS3</li>
@@ -116,7 +116,7 @@
         Frontpage
       </template>
       <p slot="subtitle">
-        a resort
+        real estate agency
       </p>
       <template slot="front">
         <li>CSS3</li>

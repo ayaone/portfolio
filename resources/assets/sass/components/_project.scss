@@ -1,0 +1,128 @@
+.main-wrap.project {
+    display: block;
+    padding: 0 35rem 5rem 35rem;
+    height: auto;
+}
+
+.title {
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 8rem;
+    .bg-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        padding: 0;
+        &--lms {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: rgba($lms-main, 1);
+            background-image: linear-gradient(to right, rgba(112,231,140,.7), rgba(112,231,140,.7)), url('/img/lms-large.jpg');
+            background-position: center;
+        }
+        &--exam { 
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(to right, rgba($exam-main,.7), rgba($exam-main,.7)), url('/img/exam-large.jpg');
+            background-position: center;
+        }
+        &--chat {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(to right, rgba($chat-main,.7), rgba($chat-main,.7)), url('/img/chat-large.jpg');
+            background-position: center;
+        }
+        &--tours {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(to right, rgba($tours-main-dark,.7), rgba($tours-main-dark,.7)), url('/img/tours-large.jpg');
+            background-position: center;
+        }
+        &--resort {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(to right, rgba($resort-main,.7), rgba($resort-main,.7)), url('/img/resort/resort.jpg');
+            background-position: center;
+        }
+        &--estate {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(to right, rgba($estate-main,.7), rgba($estate-main,.7)), url('/img/estate-large.jpg');
+            background-position: center;
+        }
+    }
+    &__text {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+        color: $color-primary-white;
+
+        font-size: 2.4rem;
+        font-weight: 400;
+        line-height: 2;
+        letter-spacing: 1.9;
+
+        &-main {
+            text-transform: uppercase;
+            font-size: inherit;
+            font-weight: inherit;
+        }
+        &-tertiary {
+            font-size: 2rem;
+            padding-top: 1rem;
+        }
+    }
+}
+
+
+.description {
+    // margin-top: 4rem;
+    padding-bottom: 4rem;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    color: $color-primary-black;
+    &__section {
+        width: 50%;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+        letter-spacing: 1px;
+    }
+    &__title {
+        width: 50%;
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+    &__text {
+        width: 50%;
+        font-size: 14px;
+        line-height: 1.43;
+        p {
+            margin-bottom: 5px;
+        }
+        ul {
+            padding-left: 1rem;
+            list-style-position: inside;
+            list-style-type: none;
+            li:before {
+                content: "\2014\a0";
+            }
+        }
+    }
+}
+

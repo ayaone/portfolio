@@ -1,10 +1,13 @@
 * next
-** DONE check full screen vs vue view
-   CLOSED: [2018-06-13 Wed 08:14]
-** DONE fix photoshop / freaking windows 10 update
-   CLOSED: [2018-06-13 Wed 08:14]
-** TODO add global tab state so that portfolio can be highlighted when inside of the portfolio view :)
+** TODO fix the chat header image
 * touch-up 
+** provide better quality images for
+*** lms - mobile view
+*** exam - exam-maker-png, 
 ** optimize images (in PS maybe)
 ** add different versions of images depending on the screen
 ** mobile
+** PS - create blurred pictures for the project view
+** portfolio card view: tone down colors for:
+*** tourist agency
+*** resort (red)

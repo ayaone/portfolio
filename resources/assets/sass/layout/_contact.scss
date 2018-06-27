@@ -1,0 +1,59 @@
+.contact-wrap {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: $color-primary-black;
+}
+
+.contact-header {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 8rem;
+}
+.contact-form {
+    display: flex;
+    flex-flow: column;
+    width: 60rem;
+}
+
+.contact-form > * {
+    margin-top: 2rem;
+    font-family: "Lato", sans-serif;
+    font-size: 1.6rem;
+}
+
+.input {
+    &-name, &-email {
+        height: 4rem;
+        padding: .5rem;
+
+        border: 1px solid rgba($color-primary-black, .3);
+    }
+    &-text {
+        padding: .5rem;
+        border: 1px solid rgba($color-primary-black, .3);
+    }
+    &-name:hover, &-email:hover, &-text:hover {
+        border: 1px solid rgba($color-primary-black, .7);
+    }
+    &-name:focus, &-text:focus, &-email:focus, &-submit:focus {
+        outline: none;
+        border: 2px solid rgba($color-primary-black, .3);
+    }
+    &-submit {
+        border-radius: 5px;
+        box-shadow: none;
+        background-color: white;
+        color: $color-primary-black;
+        border: 2px solid rgba($color-primary-black, .7);
+        padding: 2rem 0;
+        letter-spacing: 1;
+    }
+    &-submit:hover {
+        cursor: pointer;
+        background-color: $color-primary-black;
+        color: #fff;
+    }
+}

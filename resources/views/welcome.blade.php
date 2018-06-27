@@ -4,9 +4,9 @@
            @component('components.header')
                @endcomponent
             <main>
-                <div class="main">
+                <div class="main" :class="{'project-view': views.project}">
                     <transition name="component-fade" mode="out-in">
-                        <component :is="currentView"></component>
+                        <component :is="views.current"></component>
                     </transition>
                 </div>
             </main>
