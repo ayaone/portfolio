@@ -1,6 +1,6 @@
 <template>
 <div class="contact-wrap">
-    <h2 class="contact-header">Got a request?</h2>
+    <h2 class="contact-header">Got a question?</h2>
     <form class="contact-form" action="#">
     
       <input
@@ -31,7 +31,10 @@
         v-model="message.email"
         required>
       
-      <button class="input-submit" v-text="submitBtn" @click.stop="submit"></button>
+      <button class="input-submit" v-text="submitBtn" @click.prevent="submit"></button>
+
+<div class="g-recaptcha" data-sitekey="6LfasmEUAAAAAGRioK8xzihHNcVYb1IdRaIIqtUR"></div>
+
   </form>
 </div>
 </template>
@@ -40,11 +43,7 @@
 export default {
     data(){
         return {
-            message: {
-                name: '',
-                text: '',
-                email: '',
-            },
+            message: {},
             submitBtn: 'SUBMIT'
         }
     },
@@ -52,11 +51,13 @@ export default {
         submit(){
             axios
                 .post('/contact', this.message)
-                .then(()=>{
+                .then((resp)=>{
+                    console.log('ok');
+                    console.log(resp);
                     // display a sent confirmation message  
                 })
                 .catch(errors => {
-                    console.log(errors);
+                    console.log('error');
                     console.log(errors.response.data.errors);
                 });
         }

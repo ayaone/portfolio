@@ -9,5 +9,5 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Lato:400, 700" rel="stylesheet">
-
+        <script src='https://www.google.com/recaptcha/api.js'></script>
     </head>

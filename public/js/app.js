@@ -36680,25 +36680,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            message: {
-                name: '',
-                text: '',
-                email: ''
-            },
+            message: {},
             submitBtn: 'SUBMIT'
         };
     },
 
     methods: {
         submit: function submit() {
-            axios.post('/contact', this.message).then(function () {
+            axios.post('/contact', this.message).then(function (resp) {
+                console.log('ok');
+                console.log(resp);
                 // display a sent confirmation message  
             }).catch(function (errors) {
-                console.log(errors);
+                console.log('error');
                 console.log(errors.response.data.errors);
             });
         }
@@ -36715,7 +36716,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "contact-wrap" }, [
-    _c("h2", { staticClass: "contact-header" }, [_vm._v("Got a request?")]),
+    _c("h2", { staticClass: "contact-header" }, [_vm._v("Got a question?")]),
     _vm._v(" "),
     _c("form", { staticClass: "contact-form", attrs: { action: "#" } }, [
       _c("input", {
@@ -36807,10 +36808,15 @@ var render = function() {
         domProps: { textContent: _vm._s(_vm.submitBtn) },
         on: {
           click: function($event) {
-            $event.stopPropagation()
+            $event.preventDefault()
             return _vm.submit($event)
           }
         }
+      }),
+      _vm._v(" "),
+      _c("div", {
+        staticClass: "g-recaptcha",
+        attrs: { "data-sitekey": "6LfasmEUAAAAAGRioK8xzihHNcVYb1IdRaIIqtUR" }
       })
     ])
   ])

@@ -1,4 +1,9 @@
 * next
+** TODO setup mailgun
+    - https://laracasts.com/series/laravel-from-scratch-2017/episodes/26
+** TODO create controller, add validation rules (server)
+** TODO send email via mailgun
+** TODO show 'message sent' (front end)
 ** TODO fix the chat header image
 * touch-up 
 ** provide better quality images for
