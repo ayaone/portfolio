@@ -56,4 +56,7 @@
         background-color: $color-primary-black;
         color: #fff;
     }
+    &-submit:hover .spinner > div {
+        background-color: #fff;
+    }
 }

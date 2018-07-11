@@ -1,14 +1,11 @@
 * next
-** DONE setup mailgun
-   CLOSED: [2018-07-10 Tue 15:25]
-    - https://laracasts.com/series/laravel-from-scratch-2017/episodes/26
-** DONE create controller, add validation rules (server)
-   CLOSED: [2018-07-10 Tue 15:26]
-** DONE send email via mailgun
-   CLOSED: [2018-07-10 Tue 15:26]
-** TODO add a CSS spinner
-** TODO show 'message sent' (front end)
-** TODO after confirming clear the form and reset reCaptcha
+** DONE add a CSS spinner
+   CLOSED: [2018-07-11 Wed 09:55]
+** DONE show 'message sent' (front end)
+   CLOSED: [2018-07-11 Wed 09:55]
+** DONE after confirming clear the form and reset reCaptcha
+   CLOSED: [2018-07-11 Wed 09:55]
+** TODO display form errors if any
 ** TODO fix the chat header image
 * touch-up 
 ** provide better quality images for

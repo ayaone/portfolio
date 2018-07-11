@@ -2,6 +2,7 @@
 @import "variables";
 @import "base/typography";
 @import "base/animations";
+@import "base/utilities";
 
 @import "layout/header";
 @import "layout/main";
@@ -9,6 +10,7 @@
 
 @import "components/card";
 @import "components/project";
+@import "components/spinner";
 
 *,
 *::after,

@@ -208,3 +208,34 @@ Archived entries from file /home/aya/Projects/portfolio/TODO.org
   :ARCHIVE_CATEGORY: TODO
   :ARCHIVE_TODO: DONE
   :END:
+
+* DONE send email via mailgun
+  CLOSED: [2018-07-10 Tue 15:26]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-11 Wed 09:55
+  :ARCHIVE_FILE: ~/Projects/portfolio/TODO.org
+  :ARCHIVE_OLPATH: next
+  :ARCHIVE_CATEGORY: TODO
+  :ARCHIVE_TODO: DONE
+  :END:
+
+* DONE create controller, add validation rules (server)
+  CLOSED: [2018-07-10 Tue 15:26]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-11 Wed 09:55
+  :ARCHIVE_FILE: ~/Projects/portfolio/TODO.org
+  :ARCHIVE_OLPATH: next
+  :ARCHIVE_CATEGORY: TODO
+  :ARCHIVE_TODO: DONE
+  :END:
+
+* DONE setup mailgun
+  CLOSED: [2018-07-10 Tue 15:25]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-07-11 Wed 09:55
+  :ARCHIVE_FILE: ~/Projects/portfolio/TODO.org
+  :ARCHIVE_OLPATH: next
+  :ARCHIVE_CATEGORY: TODO
+  :ARCHIVE_TODO: DONE
+  :END:
+   - https://laracasts.com/series/laravel-from-scratch-2017/episodes/26
