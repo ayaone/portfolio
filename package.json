@@ -22,6 +22,7 @@
     "vue": "^2.5.7"
   },
   "dependencies": {
-    "flickity": "^2.1.1"
+    "flickity": "^2.1.1",
+    "vue-recaptcha": "^1.1.1"
   }
 }

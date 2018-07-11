@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mail\Contact;
 use App\Utilities\Curl;
+use Zttp\Zttp;
+
 
 class ContactController extends Controller
 {
@@ -13,20 +15,34 @@ class ContactController extends Controller
         $this->validate(request(), [
             'name' => 'required',
             'email' => 'required|email',
-            'text' => 'required'
+            'text' => 'required',
+            'captcha'=> 'required'
         ]);
 
+        // $this->validateRequest();
+
+
         $response = json_decode($curl->post('https://www.google.com/recaptcha/api/siteverify', [
-            'server' => config('services.recaptcha.secret'),
-            'response' => $request->input('g-recaptcha-response'),
+            'secret' => config('services.recaptcha.secret'),
+            'response' => $request->input('captcha'),
             'remoteip' => $request->ip()
         ]));
-        return $request->input('g-recaptcha-response');
+
 
         if (! $response->success) {
             abort(400, 'Recaptcha did not pass');
         }
-
         \Mail::to('test@test.com')->send(new Contact($request->toArray()));
     }
+
+    public function validateRequest()
+    {
+        $this->validate(request(), [
+            'name' => 'required',
+            'email' => 'required|email',
+            'text' => 'required',
+            'captcha'=> 'required'
+        ]);
+    }
+
 }

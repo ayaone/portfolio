@@ -36683,25 +36683,70 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        this.render();
+    },
     data: function data() {
         return {
             message: {},
-            submitBtn: 'SUBMIT'
+            submitButton: {
+                text: 'SUBMIT',
+                disabled: false
+            },
+            errors: {},
+            widgetId: 0
         };
     },
 
     methods: {
-        submit: function submit() {
-            axios.post('/contact', this.message).then(function (resp) {
-                console.log('ok');
-                console.log(resp);
-                // display a sent confirmation message  
-            }).catch(function (errors) {
-                console.log('error');
-                console.log(errors.response.data.errors);
+        execute: function execute() {
+            window.grecaptcha.execute(this.widgetId);
+        },
+        render: function render() {
+            var _this = this;
+
+            var self = this;
+            if (!window.grecaptcha) {
+                setTimeout(function () {
+                    self.render();
+                }, 500);
+                return;
+            }
+            this.widgetId = window.grecaptcha.render('g-recaptcha', {
+                sitekey: '6LdllWIUAAAAANqTh7QJGqtnQHKxudFbFULCCOyZ',
+                callback: function callback(response) {
+                    _this.message.captcha = response;
+                }
             });
+        },
+        reset: function reset() {
+            window.grecaptcha.reset(this.widgetId);
+        },
+        submit: function submit() {
+            var _this2 = this;
+
+            this.submitButton.text = 'SUBMITTING...';
+            this.submitButton.disabled = true;
+            axios.post('/contact', this.message).then(function (resp) {
+                _this2.enableSubmit();
+                //TODO:display a confirmation message
+            }).catch(function (errors) {
+                _this2.enableSubmit();
+                _this2.errors = errors.response.data.errors;
+            });
+        },
+        enableSubmit: function enableSubmit() {
+            this.submitButton.text = 'SUBMIT';
+            this.submitButton.disabled = false;
         }
     }
 
@@ -36718,107 +36763,112 @@ var render = function() {
   return _c("div", { staticClass: "contact-wrap" }, [
     _c("h2", { staticClass: "contact-header" }, [_vm._v("Got a question?")]),
     _vm._v(" "),
-    _c("form", { staticClass: "contact-form", attrs: { action: "#" } }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.message.name,
-            expression: "message.name"
-          }
-        ],
-        staticClass: "input-name",
-        attrs: {
-          name: "name",
-          id: "name",
-          type: "text",
-          placeholder: "Name",
-          required: ""
-        },
-        domProps: { value: _vm.message.name },
+    _c(
+      "form",
+      {
+        staticClass: "contact-form",
+        attrs: { action: "#" },
         on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.$set(_vm.message, "name", $event.target.value)
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("textarea", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.message.text,
-            expression: "message.text"
-          }
-        ],
-        staticClass: "input-text",
-        attrs: {
-          name: "text",
-          id: "text",
-          placeholder: "How can I help you?",
-          rows: "7",
-          required: ""
-        },
-        domProps: { value: _vm.message.text },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.$set(_vm.message, "text", $event.target.value)
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.message.email,
-            expression: "message.email"
-          }
-        ],
-        staticClass: "input-email",
-        attrs: {
-          name: "email",
-          id: "email",
-          type: "email",
-          placeholder: "Email",
-          required: ""
-        },
-        domProps: { value: _vm.message.email },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.$set(_vm.message, "email", $event.target.value)
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("button", {
-        staticClass: "input-submit",
-        domProps: { textContent: _vm._s(_vm.submitBtn) },
-        on: {
-          click: function($event) {
+          submit: function($event) {
             $event.preventDefault()
             return _vm.submit($event)
           }
         }
-      }),
-      _vm._v(" "),
-      _c("div", {
-        staticClass: "g-recaptcha",
-        attrs: { "data-sitekey": "6LfasmEUAAAAAGRioK8xzihHNcVYb1IdRaIIqtUR" }
-      })
-    ])
+      },
+      [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.message.name,
+              expression: "message.name"
+            }
+          ],
+          staticClass: "input-name",
+          attrs: {
+            name: "name",
+            id: "name",
+            type: "text",
+            placeholder: "Name",
+            autocomplete: "name"
+          },
+          domProps: { value: _vm.message.name },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.message, "name", $event.target.value)
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c("textarea", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.message.text,
+              expression: "message.text"
+            }
+          ],
+          staticClass: "input-text",
+          attrs: {
+            name: "text",
+            id: "text",
+            placeholder: "How can I help you?",
+            rows: "7"
+          },
+          domProps: { value: _vm.message.text },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.message, "text", $event.target.value)
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.message.email,
+              expression: "message.email"
+            }
+          ],
+          staticClass: "input-email",
+          attrs: {
+            name: "email",
+            id: "email",
+            type: "email",
+            placeholder: "Email",
+            autocomplete: "email",
+            required: ""
+          },
+          domProps: { value: _vm.message.email },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.message, "email", $event.target.value)
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c("div", { attrs: { id: "g-recaptcha" } }),
+        _vm._v(" "),
+        _c("button", {
+          staticClass: "input-submit",
+          attrs: { disabled: _vm.submitButton.disabled },
+          domProps: { textContent: _vm._s(_vm.submitButton.text) }
+        })
+      ]
+    )
   ])
 }
 var staticRenderFns = []
