@@ -2,7 +2,7 @@
 <div class="contact-wrap">
   <h2 class="contact-header">Got a question?</h2>
   <form class="contact-form" action="#" @submit.prevent="submit">
-    
+
     <input
       class="input-name"
       name="name"
@@ -11,8 +11,12 @@
       placeholder="Name"
       v-model="message.name"
       autocomplete="name"
+      @keydown="delete errors.name"
+      required
       >
-    
+
+    <p v-if="errors.name" v-text="errors.name[0]" class="text-warning"></p>
+
     <textarea
       class="input-text"
       name="text"
@@ -20,9 +24,13 @@
       placeholder="How can I help you?"
       rows="7"
       v-model="message.text"
+      @keydown="delete errors.text"
+      required
       >
     </textarea>
-    
+
+    <p v-if="errors.text" v-text="errors.text[0]" class="text-warning"></p>
+
     <input
       class="input-email"
       name="email"
@@ -31,12 +39,16 @@
       placeholder="Email"
       v-model="message.email"
       autocomplete="email"
-      required>
-    
-    
-    
+      @keydown="delete errors.email"
+      required
+      >
+    <p v-if="errors.email" v-text="errors.email[0]" class="text-warning"></p>
+
+
     <div id="g-recaptcha"></div>
-    
+    <p v-if="errors.captcha" v-text="errors.captcha[0]" class="text-warning"></p>
+
+
     <button class="input-submit" :disabled='submitButton.disabled'>
       {{ submitButton.text }}
       <div class="spinner" v-show="submitButton.disabled">
@@ -45,7 +57,7 @@
         <div class="bounce3"></div>
       </div>
     </button>
-      
+
     </form>
 </div>
 </template>
@@ -69,7 +81,7 @@ export default {
     },
     methods: {
         execute(){
-            window.grecaptcha.execute(this.widgetId);   
+            window.grecaptcha.execute(this.widgetId);
         },
         render(){
             let self = this;
@@ -79,10 +91,12 @@ export default {
                 },500);
                 return;
             }
+            const that = this;
             this.widgetId = window.grecaptcha.render('g-recaptcha', {
                 sitekey: '6LdllWIUAAAAANqTh7QJGqtnQHKxudFbFULCCOyZ',
                 callback: (response) => {
                     this.message.captcha = response;
+                    Vue.delete(that.errors, 'captcha');
                 }
             })
         },
@@ -121,7 +135,7 @@ export default {
                 buttonsStyling: false,
                 confirmButtonClass: ['input-submit', 'u-width-1']
             });
-        
+
     }
     }
 

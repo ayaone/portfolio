@@ -33,7 +33,7 @@
         This project only involved coding the front-end part. Here I focused on building the entire page with modern CSS3 features like Flexbox.
       </p>
       <p>
-        The site was designed by Jonas Schemdtmann.
+        The site was designed by Jonas Schmedtmann.
       </p>
     </div>
   </div>

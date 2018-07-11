@@ -33,7 +33,7 @@
         This project only involved coding the front-end part. The flat layout and multiple rows and columns of this projects were a good case to focus on using modern CSS3 Grid Layout.
       </p>
       <p>
-        The site was designed by Jonas Schemdtmann.
+        The site was designed by Jonas Schmedtmann.
       </p>
     </div>
   </div>

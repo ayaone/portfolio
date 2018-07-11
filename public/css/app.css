@@ -345,6 +345,11 @@ body {
   background-color: #fff;
 }
 
+.text-warning {
+  font-size: 1.3rem;
+  color: #FE001E;
+}
+
 .card {
   margin-right: 5rem;
   margin-bottom: 1rem;

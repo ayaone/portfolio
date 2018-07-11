@@ -33,7 +33,7 @@
         This project only involved coding the front-end part. Here I focused on utilising modern CSS features, and creating subtle animations while retaining clean UI. 
       </p>
       <p>
-        The site was designed by Jonas Schemdtmann.
+        The site was designed by Jonas Schmedtmann.
       </p>
     </div>
   </div>
