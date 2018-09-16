@@ -7,7 +7,7 @@
                 <a href="#contact" class="btn hero__button" @click.stop="contact">Contact Me</a>
             </div>
             <a href="#portfolio" class="arrow" @click="portfolio">
-                <img class="icon" src="/icons/down-arrow.svg">
+                <img class="icon" src="/icons/down-arrow.svg" >
             </a>
         </div>
 </template>
