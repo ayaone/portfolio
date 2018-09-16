@@ -203,7 +203,7 @@ body {
   transition: all 1s;
 }
 
-@media (max-height: 36em) {
+@media (max-height: 32em) {
   .main {
     margin: 0;
     min-height: calc(100vh - 6rem);
@@ -273,7 +273,7 @@ body {
   border-right: 3px solid;
 }
 
-@media (max-height: 36em) {
+@media (max-height: 32em) {
   .hero__title-1 {
     margin-top: -7rem;
     margin-bottom: 2rem;
@@ -288,7 +288,7 @@ body {
   color: #333;
 }
 
-@media (max-height: 36em) {
+@media (max-height: 32em) {
   .hero__title-2 {
     margin-bottom: 3rem;
   }
@@ -378,7 +378,7 @@ body {
   }
 }
 
-@media (max-height: 36em) {
+@media (max-height: 32em) {
   .contact-header {
     padding-top: 3rem;
     margin-top: 1rem;
@@ -454,7 +454,7 @@ body {
   letter-spacing: 1;
 }
 
-@media (max-height: 36em) {
+@media (max-height: 32em) {
   .input-submit {
     margin-bottom: 2rem;
   }
@@ -553,7 +553,7 @@ body {
   }
 }
 
-@media (max-height: 36em) {
+@media (max-height: 32em) {
   .card {
     height: 30rem;
   }
@@ -580,7 +580,7 @@ body {
   background-size: cover;
 }
 
-@media (max-height: 36em) {
+@media (max-height: 32em) {
   .card__chat {
     background-position: center;
   }
@@ -600,7 +600,7 @@ body {
   background-size: cover;
 }
 
-@media (max-height: 36em) {
+@media (max-height: 32em) {
   .card__resort {
     background-position: center;
   }
@@ -656,7 +656,7 @@ body {
           filter: blur(3px);
 }
 
-@media (max-height: 36em) {
+@media (max-height: 32em) {
   .card__blur--chat {
     background-position: center;
   }
@@ -680,7 +680,7 @@ body {
           filter: blur(3px);
 }
 
-@media (max-height: 36em) {
+@media (max-height: 32em) {
   .card__blur--resort {
     background-position: center;
   }
@@ -782,7 +782,7 @@ body {
   text-transform: uppercase;
 }
 
-@media (max-height: 36em) {
+@media (max-height: 32em) {
   .card__title {
     padding-top: 9rem;
     height: 100%;
@@ -793,7 +793,7 @@ body {
   background-color: #42b281;
 }
 
-@media (max-height: 36em) {
+@media (max-height: 32em) {
   .card__title--lms {
     background-color: rgba(66, 178, 129, 0.7);
   }
@@ -803,7 +803,7 @@ body {
   background-color: #96698e;
 }
 
-@media (max-height: 36em) {
+@media (max-height: 32em) {
   .card__title--exam {
     background-color: rgba(150, 105, 142, 0.7);
   }
@@ -813,7 +813,7 @@ body {
   background-color: #B1C17A;
 }
 
-@media (max-height: 36em) {
+@media (max-height: 32em) {
   .card__title--chat {
     background-color: rgba(177, 193, 122, 0.7);
   }
@@ -823,7 +823,7 @@ body {
   background-color: #5fcc79;
 }
 
-@media (max-height: 36em) {
+@media (max-height: 32em) {
   .card__title--tours {
     background-color: rgba(99, 198, 122, 0.7);
   }
@@ -833,7 +833,7 @@ body {
   background-color: #c4604a;
 }
 
-@media (max-height: 36em) {
+@media (max-height: 32em) {
   .card__title--resort {
     background-color: rgba(196, 96, 74, 0.7);
   }
@@ -843,7 +843,7 @@ body {
   background-color: #42c4c0;
 }
 
-@media (max-height: 36em) {
+@media (max-height: 32em) {
   .card__title--estate {
     background-color: rgba(66, 196, 192, 0.7);
   }
@@ -897,7 +897,7 @@ body {
   margin-bottom: 8rem;
 }
 
-@media (max-height: 36em) {
+@media (max-height: 32em) {
   .title {
     padding: 3rem;
   }
@@ -1151,7 +1151,7 @@ html {
   }
 }
 
-@media (max-height: 36em) {
+@media (max-height: 32em) {
   html {
     font-size: 45%;
   }

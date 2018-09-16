@@ -21,7 +21,7 @@ big screen
     }
 
     @if $breakpoint == phone-land {
-        @media (max-height: 36em) { @content }; // 575px
+        @media (max-height: 32em) { @content }; // 575px
     }
 
     @if $breakpoint == phone {
