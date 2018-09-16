@@ -47,10 +47,10 @@
     </h3>
     <div class="description__text">
       <p>
-        The only solution to this problem was to implement a <span class="text-bold">BYOD philosophy</span>  (Bring Your Own Device). We agreed that, since all students own smarthphones, they would be taking the test using their own devices.
+        The only solution to this problem was to implement a <span class="text-bold">BYOD philosophy</span>  (Bring Your Own Device). We agreed that, since all students own smartphones, they would be taking the test using their own devices.
       </p>
       <p>
-        Another problem that arised, was that the server had to be hosted locally - the centered experienced frequent Internet outages, and the WiFi they provided wasn't reliable for the purpose of taking exams.
+        Another problem that arose, was that the server had to be hosted locally - the centered experienced frequent Internet outages, and the WiFi they provided wasn't reliable for the purpose of taking exams.
       </p>
       <p>
         I chose to host the server on <span class="text-bold">Raspberry PIs</span> and provide independent WiFi access point to student taking exams.

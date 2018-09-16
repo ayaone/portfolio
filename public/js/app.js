@@ -39562,7 +39562,7 @@ var render = function() {
       [
         _c("img", {
           staticClass: "icon",
-          attrs: { src: "icons/down-arrow.svg" }
+          attrs: { src: "/icons/down-arrow.svg" }
         })
       ]
     )
@@ -41267,7 +41267,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("li", [
             _vm._v(
-              "\n          track attendance, home assignemnts and exams,         \n        "
+              "\n          track attendance, home assignments and exams,         \n        "
             )
           ]),
           _vm._v(" "),
@@ -41390,7 +41390,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "description__text" }, [
         _c("p", [
           _vm._v(
-            "\n        The grading scale is fully editable and every teacher can tailor it to his needs. In addition, with the help of the slider, teachers can adjust the score threashold for all grades with just one click.       \n      "
+            "\n        The grading scale is fully editable and every teacher can tailor it to his needs. In addition, with the help of the slider, teachers can adjust the score threshold for all grades with just one click.       \n      "
           )
         ])
       ])
@@ -41425,7 +41425,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "description__text" }, [
         _vm._v(
-          "\n      Each subject has its dedicated homepage, where lectureres can post updates, assign homework and upload worksheets and study materials.\n    "
+          "\n      Each subject has its dedicated homepage, where lecturers can post updates, assign homework and upload worksheets and study materials.\n    "
         )
       ])
     ])
@@ -41884,13 +41884,13 @@ var staticRenderFns = [
           ),
           _c("span", { staticClass: "text-bold" }, [_vm._v("BYOD philosophy")]),
           _vm._v(
-            "  (Bring Your Own Device). We agreed that, since all students own smarthphones, they would be taking the test using their own devices.\n      "
+            "  (Bring Your Own Device). We agreed that, since all students own smartphones, they would be taking the test using their own devices.\n      "
           )
         ]),
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            "\n        Another problem that arised, was that the server had to be hosted locally - the centered experienced frequent Internet outages, and the WiFi they provided wasn't reliable for the purpose of taking exams.\n      "
+            "\n        Another problem that arose, was that the server had to be hosted locally - the centered experienced frequent Internet outages, and the WiFi they provided wasn't reliable for the purpose of taking exams.\n      "
           )
         ]),
         _vm._v(" "),
@@ -42509,7 +42509,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "description__text" }, [
         _c("p", [
           _vm._v(
-            "\n        This project only involved coding the front-end part. Here I focused on utilising modern CSS features, and creating subtle animations while retaining clean UI. \n      "
+            "\n        This project only involved coding the front-end part. Here I focused on utilizing modern CSS features, and creating subtle animations while retaining clean UI. \n      "
           )
         ]),
         _vm._v(" "),

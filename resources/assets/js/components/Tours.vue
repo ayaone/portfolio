@@ -30,7 +30,7 @@
     </h3>
     <div class="description__text">
       <p>
-        This project only involved coding the front-end part. Here I focused on utilising modern CSS features, and creating subtle animations while retaining clean UI. 
+        This project only involved coding the front-end part. Here I focused on utilizing modern CSS features, and creating subtle animations while retaining clean UI. 
       </p>
       <p>
         The site was designed by Jonas Schmedtmann.

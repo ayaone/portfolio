@@ -56,7 +56,7 @@
           organize students into groups,         
         </li>
         <li>
-          track attendance, home assignemnts and exams,         
+          track attendance, home assignments and exams,         
         </li>
         <li>
           see each student's grade as well as adjust the grading scale on the fly
@@ -136,7 +136,7 @@
     </h3>
     <div class="description__text">
       <p>
-        The grading scale is fully editable and every teacher can tailor it to his needs. In addition, with the help of the slider, teachers can adjust the score threashold for all grades with just one click.       
+        The grading scale is fully editable and every teacher can tailor it to his needs. In addition, with the help of the slider, teachers can adjust the score threshold for all grades with just one click.       
       </p>
     </div>
   </div>
@@ -166,7 +166,7 @@
       Homepage for each subject
     </h3>
     <div class="description__text">
-      Each subject has its dedicated homepage, where lectureres can post updates, assign homework and upload worksheets and study materials.
+      Each subject has its dedicated homepage, where lecturers can post updates, assign homework and upload worksheets and study materials.
     </div>
   </div>
   <framed-image src="/img/lms/subject_page.png" alt="subject homepage" size="small">
