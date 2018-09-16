@@ -13,3 +13,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400, 700" rel="stylesheet">
         <script src='https://www.google.com/recaptcha/api.js' async defer></script>
     </head>
+    <body>
+        @yield('body')
+    </body>
+</html>

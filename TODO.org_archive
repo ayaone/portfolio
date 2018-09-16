@@ -239,3 +239,43 @@ Archived entries from file /home/aya/Projects/portfolio/TODO.org
   :ARCHIVE_TODO: DONE
   :END:
    - https://laracasts.com/series/laravel-from-scratch-2017/episodes/26
+
+* DONE add a CSS spinner
+  CLOSED: [2018-07-11 Wed 09:55]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-09-06 Thu 08:52
+  :ARCHIVE_FILE: ~/Projects/portfolio/TODO.org
+  :ARCHIVE_OLPATH: next
+  :ARCHIVE_CATEGORY: TODO
+  :ARCHIVE_TODO: DONE
+  :END:
+
+* DONE show 'message sent' (front end)
+  CLOSED: [2018-07-11 Wed 09:55]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-09-06 Thu 08:52
+  :ARCHIVE_FILE: ~/Projects/portfolio/TODO.org
+  :ARCHIVE_OLPATH: next
+  :ARCHIVE_CATEGORY: TODO
+  :ARCHIVE_TODO: DONE
+  :END:
+
+* DONE after confirming clear the form and reset reCaptcha
+  CLOSED: [2018-07-11 Wed 09:55]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-09-06 Thu 08:52
+  :ARCHIVE_FILE: ~/Projects/portfolio/TODO.org
+  :ARCHIVE_OLPATH: next
+  :ARCHIVE_CATEGORY: TODO
+  :ARCHIVE_TODO: DONE
+  :END:
+
+* DONE display form errors if any
+  CLOSED: [2018-07-11 Wed 15:16]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-09-06 Thu 08:52
+  :ARCHIVE_FILE: ~/Projects/portfolio/TODO.org
+  :ARCHIVE_OLPATH: next
+  :ARCHIVE_CATEGORY: TODO
+  :ARCHIVE_TODO: DONE
+  :END:

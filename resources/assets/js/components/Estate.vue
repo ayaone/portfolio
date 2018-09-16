@@ -39,7 +39,7 @@
   </div>
 
 
-  <framed-image alt="Real Estate Agency Homepage" src="/img/estate/estate-whole.png" size="large">
+  <framed-image alt="Real Estate Agency Homepage" src="/img/estate/estate-whole.jpg" size="large">
   </framed-image>
 
 

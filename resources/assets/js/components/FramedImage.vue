@@ -10,16 +10,58 @@
 </template>
 
 <style lang="scss">
+.width-default {
+    
+    @media (max-width: 56.25em) {
+        width: 85vw;
+        height: auto
+    }
+    @media (max-width: 37.5em) {
+        width: 85vw;
+        height: auto;
+    }
+}
 .width-small {
     width: 40rem;
+    
+    @media (max-width: 87.5em) {
+        width: 35vw;
+        height: auto;
+    }
+    @media (max-width: 56.25em) {
+        width: 55vw;
+        height: auto;
+    }
+    @media (max-width: 37.5em) {
+        width: 85vw;
+        height: auto;
+    }
 }
 
 .width-medium {
     width: 60rem;
+    
+    @media (max-width: 56.25em) {
+        width: 85vw;
+        height: auto;
+    }
+    @media (max-width: 37.5em) {
+        width: 85vw;
+        height: auto;
+    }
 }
 
 .width-large {
     width: 90rem;
+    
+    @media (max-width: 56.25em) {
+        width: 85vw;
+        height: auto;
+    }
+    @media (max-width: 37.5em) {
+        width: 85vw;
+        height: auto;
+    }
 }
 
 .image-wrap {
@@ -34,12 +76,16 @@
     flex-flow: column;
     align-items: center;
     
-    background-color: rgba(0, 0, 0, .1);
+   // background-color: rgba(0, 0, 0, .1);
     padding: 2rem 2rem 0 2rem;
     margin-left: auto;
     margin-right: auto;
     
     text-align: center;
+    
+    @media (max-width: 37.5em) {
+        padding: 5px 5px 0 5px;
+    }
     p {
         padding: 1rem;
         font-size: 1.3rem;

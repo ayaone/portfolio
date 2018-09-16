@@ -1,8 +1,8 @@
 @extends('master')
-    <body>
+    @section('body')
         <div id="app">
            @component('components.header')
-               @endcomponent
+           @endcomponent
             <main>
                 <div class="main" :class="{'project-view': views.project}">
                     <transition name="component-fade" mode="out-in">
@@ -12,5 +12,4 @@
             </main>
         </div>
         <script src="/js/app.js"></script>
-    </body>
-</html>
+    @stop

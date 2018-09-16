@@ -1,5 +1,6 @@
 // Variables
 @import "variables";
+@import "mixins";
 @import "base/typography";
 @import "base/animations";
 @import "base/utilities";
@@ -7,6 +8,7 @@
 @import "layout/header";
 @import "layout/main";
 @import "layout/contact";
+@import "layout/about";
 
 @import "components/card";
 @import "components/project";
@@ -22,8 +24,18 @@
 
 html {
     //defines 1rem = 10px
-    // default font size is 16px
+    //default font size is 16px
     font-size: 62.5%;
+
+    @include respond(tab-land) {
+        font-size: 56.25%;
+    }
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+    @include respond(phone-land){
+        font-size: 45%;
+    }
 }
 
 body {

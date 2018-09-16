@@ -2,15 +2,36 @@
     display: block;
     padding: 0 35rem 5rem 35rem;
     height: auto;
+
+    @include respond(tab-land) {
+        padding: 1px 0rem;
+        width: auto;
+    }
+    @include respond(tab-port) {
+        padding: 1px 0rem;
+        width: auto;
+    }
+    @include respond(phone) {
+        padding: 1px 0rem;
+        width: auto;
+    }
 }
 
 .title {
     height: 25vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     margin-bottom: 8rem;
+
+    @include respond(phone-land){
+        padding: 3rem;
+    }
+    @include respond(phone) {
+        padding: 3rem;
+    }
     .bg-image {
         position: absolute;
         top: 0;
@@ -24,15 +45,17 @@
             height: 100%;
             width: 100%;
             background-color: rgba($lms-main, 1);
-            background-image: linear-gradient(to right, rgba(112,231,140,.7), rgba(112,231,140,.7)), url('/img/lms-large.jpg');
-            background-position: center;
+            background-image: linear-gradient(to right, rgba($lms-main,.7), rgba($lms-main,.7)), url('/img/lms-large.jpg');
+            background-size: cover;
+            background-position: center 47%;
         }
-        &--exam { 
+        &--exam {
             position: absolute;
             height: 100%;
             width: 100%;
             background-image: linear-gradient(to right, rgba($exam-main,.7), rgba($exam-main,.7)), url('/img/exam-large.jpg');
             background-position: center;
+            background-size: cover;
         }
         &--chat {
             position: absolute;
@@ -47,13 +70,15 @@
             width: 100%;
             background-image: linear-gradient(to right, rgba($tours-main-dark,.7), rgba($tours-main-dark,.7)), url('/img/tours-large.jpg');
             background-position: center;
+            background-size: cover;
         }
         &--resort {
             position: absolute;
             height: 100%;
             width: 100%;
-            background-image: linear-gradient(to right, rgba($resort-main,.7), rgba($resort-main,.7)), url('/img/resort/resort.jpg');
-            background-position: center;
+            background-image: linear-gradient(to right, rgba($resort-main,.7), rgba($resort-main,.7)), url('/img/resort-large.jpg');
+            background-position: center 70%;
+            background-size: cover;
         }
         &--estate {
             position: absolute;
@@ -74,6 +99,11 @@
         line-height: 2;
         letter-spacing: 1.9;
 
+        @include respond(phone) {
+            font-size: 2rem;
+            line-height: 1.6;
+        }
+
         &-main {
             text-transform: uppercase;
             font-size: inherit;
@@ -88,15 +118,28 @@
 
 
 .description {
-    // margin-top: 4rem;
     padding-bottom: 4rem;
     width: 100%;
     display: flex;
     flex-flow: column;
     align-items: center;
     color: $color-primary-black;
+
+    & > * {
+        width: 38%;
+
+        @include respond(tab-land) {
+            width: 40%;
+        }
+        @include respond(tab-port) {
+            width: 50%;
+        }
+        @include respond(phone) {
+            width: 80%;
+        }
+    }
     &__section {
-        width: 50%;
+      //  width: 35%;
         font-size: 1.6rem;
         text-transform: uppercase;
         margin-top: 4rem;
@@ -104,14 +147,34 @@
         letter-spacing: 1px;
     }
     &__title {
-        width: 50%;
+       // width: 35%;
         font-size: 1.6rem;
         margin-bottom: 2rem;
+
+        // @include respond(tab-land) {
+        //     width: 35%;
+        // }
+        // @include respond(tab-port) {
+        //     width: 50%;
+        // }
+        // @include respond(phone) {
+        //     width: 80%;
+        // }
     }
     &__text {
-        width: 50%;
+      //  width: 35%;
         font-size: 14px;
         line-height: 1.43;
+
+        // @include respond(tab-land) {
+        //     width: 35%;
+        // }
+        // @include respond(tab-port) {
+        //     width: 50%;
+        // }
+        // @include respond(phone) {
+        //     width: 80%;
+        // }
         p {
             margin-bottom: 5px;
         }
@@ -125,4 +188,3 @@
         }
     }
 }
-

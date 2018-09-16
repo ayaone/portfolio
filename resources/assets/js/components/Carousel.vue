@@ -6,7 +6,7 @@
 
 <style>
   .main-carousel {
-  width: 60%;
+//      width: 60%;
   }
 </style>
 
@@ -20,7 +20,6 @@ export default {
         autoplay: {default: false},
     },
     mounted() {
-            console.log('flick');
             new Flickity(this.$el, {
                 wrapAround: this.wraparound,
                 autoPlay: this.autoplay,

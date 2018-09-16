@@ -3,19 +3,40 @@
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    min-height: 100%;
     color: $color-primary-black;
+    @include respond(phone-land) {
+    }
 }
 
 .contact-header {
     font-size: 3rem;
     font-weight: 400;
+    margin-top: 10rem;
     margin-bottom: 8rem;
+
+    @include respond(tab-land){
+        margin-top: 5rem;
+    }
+    @include respond(phone-land) {
+        padding-top: 3rem;
+        margin-top: 1rem;
+        margin-bottom: 4rem;
+    }
+    @include respond(phone) {
+        margin-top: 1rem;
+        margin-bottom: 4rem;
+    }
 }
 .contact-form {
     display: flex;
     flex-flow: column;
     width: 60rem;
+
+    @include respond(phone) {
+        width: 85vw;
+        margin-bottom: 4rem;
+    }
 }
 
 .contact-form > * {
@@ -50,6 +71,10 @@
         border: 2px solid rgba($color-primary-black, .7);
         padding: 2rem 0;
         letter-spacing: 1;
+
+        @include respond(phone-land){
+            margin-bottom: 2rem;
+        }
     }
     &-submit:hover {
         cursor: pointer;

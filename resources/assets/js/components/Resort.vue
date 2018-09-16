@@ -39,7 +39,7 @@
   </div>
 
 
-  <framed-image alt="Tours Homepage" src="/img/resort/whole.png" size="large">
+  <framed-image alt="Tours Homepage" src="/img/resort/whole.jpg" size="large">
   </framed-image>
 
 

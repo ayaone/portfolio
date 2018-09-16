@@ -7,6 +7,16 @@
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 3px 10px 0 rgba(0,0,0, .8);
+
+    @include respond(tab-port){
+        height: 50rem;
+        width: 33.333rem;
+    }
+
+    @include respond(phone-land){
+        height: 30rem;
+    }
+
     &__lms {
         height: 100%;
         background-image: linear-gradient(to right, rgba(112,231,140,.3), rgba(112,231,140,.3)), url('/img/lms-large.jpg');
@@ -21,6 +31,10 @@
         height: 100%;
         background-image: linear-gradient(to right, rgba($chat-main,.3), rgba($chat-main,.3)), url('/img/chat-large.jpg');
         background-size: cover;
+
+        @include respond(phone-land){
+            background-position: center;
+        }
     }
     &__tours {
         height: 100%;
@@ -31,6 +45,9 @@
         height: 100%;
         background-image: linear-gradient(to right, rgba($resort-main,.3), rgba($resort-main,.3)), url('/img/resort-large.jpg');
         background-size: cover;
+        @include respond(phone-land){
+            background-position: center;
+        }
     }
     &__estate {
         height: 100%;
@@ -69,6 +86,10 @@
             background-image: linear-gradient(to right rgba(0, 0, 0,.4), rgba(0,0,0,.4)), linear-gradient(to right, rgba($chat-main,.5), rgba($chat-main,.5)), url('/img/chat-large.jpg');
             background-size: cover;
             filter: blur(3px);
+
+            @include respond(phone-land){
+                background-position: center;
+            }
         }
         &--tours{
             height: 100%;
@@ -81,6 +102,10 @@
             background-image: linear-gradient(to right rgba(0, 0, 0,.4), rgba(0,0,0,.4)), linear-gradient(to right, rgba($resort-main,.5), rgba($resort-main,.5)), url('/img/resort-large.jpg');
             background-size: cover;
             filter: blur(3px);
+
+            @include respond(phone-land){
+                background-position: center;
+            }
         }
         &--estate{
             height: 100%;
@@ -159,24 +184,47 @@
         line-height: 1.75;
         text-align: center;
         text-transform: uppercase;
+
+        @include respond(phone-land){
+            padding-top: 9rem;
+            height: 100%;
+        }
     }
     &__title--lms {
         background-color: $lms-main;
+        @include respond(phone-land){
+            background-color: rgba($lms-main, .7);
+        }
     }
     &__title--exam {
         background-color: $exam-main;
+        @include respond(phone-land){
+            background-color: rgba($exam-main, .7);
+        }
     }
     &__title--chat {
         background-color: $chat-main;
+        @include respond(phone-land){
+            background-color: rgba($chat-main, .7);
+        }
     }
     &__title--tours {
         background-color: $tours-main-dark;
+        @include respond(phone-land){
+            background-color: rgba($tours-main, .7);
+        }
     }
     &__title--resort {
         background-color: $resort-main;
+        @include respond(phone-land){
+            background-color: rgba($resort-main, .7);
+        }
     }
     &__title--estate {
         background-color: $estate-main;
+        @include respond(phone-land){
+            background-color: rgba($estate-main, .7);
+        }
     }
     &__subtitle {
         text-transform: none;

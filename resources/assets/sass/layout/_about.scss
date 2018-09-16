@@ -1,0 +1,44 @@
+.about-wrap {
+    min-height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include respond(phone) {
+        flex-flow: column;
+    }
+}
+
+.text {
+    flex-grow: 3;
+    color: $color-primary-black;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    max-width: 50rem;
+
+    @include respond(phone) {
+        width: auto;
+        margin-left: 0px;
+        margin: 4rem;
+    }
+
+    p {
+//        max-width: 80rem;
+    }
+}
+
+.picture {
+    text-align: right;
+    @include respond(phone) {
+        margin-top: 7rem;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+
+    img {
+        width: 30%;
+        height: auto;
+    }
+}

@@ -1,11 +1,7 @@
 * next
-** DONE add a CSS spinner
-   CLOSED: [2018-07-11 Wed 09:55]
-** DONE show 'message sent' (front end)
-   CLOSED: [2018-07-11 Wed 09:55]
-** DONE after confirming clear the form and reset reCaptcha
-   CLOSED: [2018-07-11 Wed 09:55]
-** TODO display form errors if any
+** TODO darken the LMS header bg image
+** TODO remove console.log('flick')
+** TODO finish the about view
 ** TODO fix the chat header image
 * touch-up 
 ** provide better quality images for

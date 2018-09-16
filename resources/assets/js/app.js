@@ -16,7 +16,7 @@ Vue.use(VueSweetalert2);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 let views = {
-    current: 'contact',
+    current: 'home',
     project: false
 };
 

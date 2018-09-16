@@ -44,7 +44,7 @@
   </framed-image>
 
 
-  <framed-image alt="Tours Homepage" src="/img/tours/whole.png" size="large">
+  <framed-image alt="Tours Homepage" src="/img/tours/whole.jpg" size="large">
   </framed-image>
 
 

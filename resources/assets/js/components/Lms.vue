@@ -33,7 +33,7 @@
     </h3>
     <div class="description__text">
       <p>
-        I was tasked to create a simple, yet powerful management system for lectureres and students of a Thai University (Rajabhat University).
+        I was tasked to create a simple, yet powerful management system for lecturers and students of a Thai University (Rajabhat University).
       </p>
       <p>
         As most lectureres had very little to no professional experience with web application, the interface had to be very simple, yet feature rich.  
@@ -91,7 +91,7 @@
     </h3>
     <div class="description__text">
       <p>
-        The modules are swapped dynamicly with the data being cached in the background giving the app a feel of native desktop application.       
+        The modules are swapped dynamically with the data being cached in the background giving the app a feel of native desktop application.       
       </p>
     </div>
   </div>

@@ -23,7 +23,7 @@
       </div>
     </div>
   </div>
-  <framed-image alt="Exam Maker" src="/img/exam/exam-maker.png" size="medium">
+  <framed-image alt="Exam Maker" src="/img/exam/exam-maker.jpg" size="medium">
     Exam Maker
   </framed-image>
   
