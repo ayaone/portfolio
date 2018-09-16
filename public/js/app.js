@@ -39499,6 +39499,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -39563,7 +39564,8 @@ var render = function() {
         _c("img", {
           staticClass: "icon",
           attrs: { src: "/icons/down-arrow.svg" }
-        })
+        }),
+        _vm._v("\n              test\n          ")
       ]
     )
   ])

@@ -8,6 +8,7 @@
             </div>
             <a href="#portfolio" class="arrow" @click="portfolio">
                 <img class="icon" src="/icons/down-arrow.svg">
+                test
             </a>
         </div>
 </template>
