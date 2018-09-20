@@ -19,20 +19,17 @@
     max-width: 50rem;
 
     @include respond(phone) {
+        flex-grow: 0;
         width: auto;
         margin-left: 0px;
         margin: 4rem;
-    }
-
-    p {
-//        max-width: 80rem;
     }
 }
 
 .picture {
     text-align: right;
     @include respond(phone) {
-        margin-top: 7rem;
+      //  margin-top: 7rem;
         margin-bottom: 3rem;
         text-align: center;
     }
