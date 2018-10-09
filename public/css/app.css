@@ -496,14 +496,15 @@ body {
 }
 
 .text {
-  -webkit-box-flex: 3;
-      -ms-flex-positive: 3;
-          flex-grow: 3;
   color: #333;
   font-size: 1.8rem;
   line-height: 2.5rem;
   margin-left: 5rem;
   margin-right: 5rem;
+  width: 100%;
+}
+
+.text p {
   max-width: 50rem;
 }
 
@@ -519,6 +520,7 @@ body {
 }
 
 .picture {
+  width: 100%;
   text-align: right;
 }
 
@@ -532,6 +534,12 @@ body {
 .picture img {
   width: 30%;
   height: auto;
+}
+
+@media (max-width: 56.25em) {
+  .picture img {
+    width: 40%;
+  }
 }
 
 .card {

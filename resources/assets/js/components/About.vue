@@ -1,7 +1,7 @@
 <template>
 <div class="about-wrap">
   <div class="picture">
-    <img alt="" src="https://via.placeholder.com/350x400"/>
+    <img alt="Profile picture" src="/img/profile.jpg"/>
   </div>
   <div class="text">
     <p>

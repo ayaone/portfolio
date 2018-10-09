@@ -40692,7 +40692,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "about-wrap" }, [
       _c("div", { staticClass: "picture" }, [
         _c("img", {
-          attrs: { alt: "", src: "https://via.placeholder.com/350x400" }
+          attrs: { alt: "Profile picture", src: "/img/profile.jpg" }
         })
       ]),
       _vm._v(" "),

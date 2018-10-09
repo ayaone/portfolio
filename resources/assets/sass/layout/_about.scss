@@ -10,13 +10,17 @@
 }
 
 .text {
-    flex-grow: 3;
+//    flex-grow: 2;
     color: $color-primary-black;
     font-size: 1.8rem;
     line-height: 2.5rem;
     margin-left: 5rem;
     margin-right: 5rem;
-    max-width: 50rem;
+    width: 100%;
+ //   max-width: 50rem;
+    p {
+        max-width: 50rem;
+    }
 
     @include respond(phone) {
         flex-grow: 0;
@@ -27,6 +31,7 @@
 }
 
 .picture {
+    width: 100%;
     text-align: right;
     @include respond(phone) {
       //  margin-top: 7rem;
@@ -37,5 +42,9 @@
     img {
         width: 30%;
         height: auto;
+
+        @include respond(tab-port) {
+            width: 40%;
+        }
     }
 }
