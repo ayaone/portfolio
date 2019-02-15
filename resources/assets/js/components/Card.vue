@@ -45,7 +45,7 @@ export default {
     props: ['name'],
     methods: {
         view(){
-            this.$root.$data.views.current=this.name;
+            this.$router.push('/portfolio/' + this.name);
             this.$root.$data.views.active='portfolio';
             this.$root.$data.views.project = true;
         } 

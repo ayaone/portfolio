@@ -56,7 +56,8 @@
 
 <script>
 export default {
-    mounted(){
+    mounted() {
+        this.$root.$data.views.project = true;
     }
 }
 </script>

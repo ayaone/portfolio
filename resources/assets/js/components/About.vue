@@ -23,6 +23,8 @@
 
 <script>
  export default {
-
+     mounted() {
+         this.$root.$data.views.project = false;
+     }
  }
 </script>

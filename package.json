@@ -24,6 +24,7 @@
   "dependencies": {
     "flickity": "^2.1.1",
     "vue-recaptcha": "^1.1.1",
+    "vue-router": "^3.0.1",
     "vue-sweetalert2": "^1.4.2"
   }
 }

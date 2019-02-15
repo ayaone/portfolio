@@ -208,6 +208,7 @@
 <script>
 export default {
     mounted(){
+        this.$root.$data.views.project = true;
     }
 }
 </script>

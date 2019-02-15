@@ -6,7 +6,7 @@
             <main>
                 <div class="main" :class="{'project-view': views.project}">
                     <transition name="component-fade" mode="out-in">
-                        <component :is="views.current"></component>
+                        <router-view></router-view>
                     </transition>
                 </div>
             </main>
