@@ -66,7 +66,6 @@
 
 export default {
     mounted(){
-        this.$root.$data.views.project = false;
         this.render();
     },
     data(){

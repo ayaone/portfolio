@@ -1,8 +1,16 @@
 * next
-** DONE NEXT add routes and mounted events for all other projects
-   CLOSED: [2018-11-20 Tue 13:19]
-   check if you can add a hook in the 'next' hook to set the project to false
-** DONE remove console.log('flick')
-   CLOSED: [2018-11-20 Tue 13:19]
+** TODO darken the LMS header bg image
+** TODO remove console.log('flick')
+** TODO finish the about view
+** TODO fix the chat header image
 * touch-up 
+** provide better quality images for
+*** lms - mobile view
+*** exam - exam-maker-png, 
+** optimize images (in PS maybe)
 ** add different versions of images depending on the screen
+** mobile
+** PS - create blurred pictures for the project view
+** portfolio card view: tone down colors for:
+*** tourist agency
+*** resort (red)
